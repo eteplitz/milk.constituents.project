@@ -351,7 +351,7 @@ div.tocify {
 <div id="data-importation" class="section level3">
 <h3>Data importation</h3>
 <hr />
-<p>All statistical analyses, data manipulation, and visualization was completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, readr, cutpointr, pls, car, caret, plotROC, knitr, epiR, kableExtra, and pROC.</p>
+<p>All statistical analyses, data manipulation, and visualization were completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, readr, cutpointr, pls, car, caret, plotROC, knitr, epiR, kableExtra, and pROC.</p>
 <p>The dataset was filtered to only include milk samples between 3-10 days in milk. There were 7 Jersey cows included in the original dataset and these have been removed below for this analysis (remaining cows are all Holstein breed). Individual cows were classified as “positive” for metritis if trained farm personnel diagnosed the cow with metritis at 14 DIM or earlier. Cows were classified as “positive” for ketosis if trained farm personnel diagnosed the cow with ketosis at 14 DIM or earlier. Cows were classified as “positive” for displaced abomasum (DA) if trained farm personnel diagnosed the cow with DA at 14 DIM of earlier. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. Cows were defined as “sick” if they were positive for at least one of these health outcomes (metritis, ketosis, or displaced abomasum). If an individual cow were diagnosed with ketosis, metritis, displaced abomasum, or mastitis, milk samples from this individual on all subsequent days were removed from the dataset. Parity 1 cows are defined as primiparous and parity 2+ cows are defined as multiparous.</p>
 <p><br></p>
 <pre class="r"><code># Reading in data and basic formatting
@@ -1275,8 +1275,11 @@ for (i in 1:num.sim) {
   cv.npv[i] = as.numeric(m$byClass[4])
   cv.auc[i] = m$auc
   
-}
-cv.avg.sens[8] = mean(cv.sens)
+}</code></pre>
+<pre><code>## Warning in confusionMatrix.default(as.factor(testing.set$test.result), reference =
+## as.factor(testing.set$sick), : Levels are not in the same order for reference and data. Refactoring
+## data to match.</code></pre>
+<pre class="r"><code>cv.avg.sens[8] = mean(cv.sens)
 cv.sens.low[8] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
 cv.sens.high[8] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
 
@@ -1318,6 +1321,8 @@ cv.auc.high[8] = quantile(cv.auc, probs = 97.5/100, na.rm = T)</code></pre>
 <div id="positive-predictive-value-plot" class="section level5">
 <h5>Positive predictive value plot</h5>
 <hr />
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p><br></p>
 </div>

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-All statistical analyses, data manipulation, and visualization was completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, readr, cutpointr, pls, car, caret, plotROC, knitr, epiR, kableExtra, and pROC.
+All statistical analyses, data manipulation, and visualization were completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, readr, cutpointr, pls, car, caret, plotROC, knitr, epiR, kableExtra, and pROC.
 
 
 The dataset was filtered to only include milk samples between 3-10 days in milk. There were 7 Jersey cows included in the original dataset and these have been removed below for this analysis (remaining cows are all Holstein breed). Individual cows were classified as “positive” for metritis if trained farm personnel diagnosed the cow with metritis at 14 DIM or earlier. Cows were classified as “positive” for ketosis if trained farm personnel diagnosed the cow with ketosis at 14 DIM or earlier. Cows were classified as “positive” for displaced abomasum (DA) if trained farm personnel diagnosed the cow with DA at 14 DIM of earlier. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. Cows were defined as “sick” if they were positive for at least one of these health outcomes (metritis, ketosis, or displaced abomasum). If an individual cow were diagnosed with ketosis, metritis, displaced abomasum, or mastitis, milk samples from this individual on all subsequent days were removed from the dataset. Parity 1 cows are defined as primiparous and parity 2+ cows are defined as multiparous.
@@ -121,7 +121,7 @@ df = df %>%
 cow.level.df = df %>% group_by(cow_id) %>% 
   summarise(parity = mean(parity))
 
-t(table(cow.level.df$parity)) %>% kable(col.names = c("Parity 1","Parity 2",
+t(table(cow.level.df$parity)) %>% knitr::kable(col.names = c("Parity 1","Parity 2",
     "Parity 3","Parity 4","Parity 5","Parity 6","Parity 7"),
                            caption = "Number of cows enrolled in study")
 
@@ -135,7 +135,7 @@ t(table(cow.level.df$parity)) %>% kable(col.names = c("Parity 1","Parity 2",
 
 ```{r, echo=F}
 
-t(table(df$dim)) %>% kable(col.names = c("3 DIM","4 DIM","5 DIM","6 DIM","7 DIM","8 DIM","9 DIM","10 DIM"),
+t(table(df$dim)) %>% knitr::kable(col.names = c("3 DIM","4 DIM","5 DIM","6 DIM","7 DIM","8 DIM","9 DIM","10 DIM"),
                            caption = "Number of samples at each DIM")
 
 
@@ -283,7 +283,7 @@ AUC.high[8] = ci.auc(df10$sick, df10$predict.prob, conf.level = 0.95)[3]
 
 ```{r, echo = F}
 
-t(AUC) %>% kable(col.names = c("3 DIM","4 DIM","5 DIM","6 DIM","7 DIM","8 DIM","9 DIM","10 DIM"),
+t(AUC) %>% knitr::kable(col.names = c("3 DIM","4 DIM","5 DIM","6 DIM","7 DIM","8 DIM","9 DIM","10 DIM"),
                            caption = "Area under ROC curve for PLS model at each DIM")
 
 ```

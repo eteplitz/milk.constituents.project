@@ -61,6 +61,14 @@ df = df %>%
 <br>
 <br>
 
+All statistical analyses, data manipulation, and visualization were completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, and readr.
+
+The dataset was filtered to only include milk samples between 3-10 days in milk. There were 7 Jersey cows included in the original dataset and these have been removed below for this analysis (remaining cows are all Holstein breed). If an individual cow were diagnosed with ketosis, metritis, displaced abomasum, or mastitis, milk samples from this individual on all subsequent days were removed from the dataset.
+
+Mean milk constituent values and corresponding standard errors (SE) were calculated for each parity group at each day in milk. The mean and standard errors were used to calculate 95% confidence intervals (mean ± 1.96 x SE) displayed as confidence bands in the line plot figures.
+
+<br>
+
 ### Lactose
 
 ```{r, echo = F, message = F}

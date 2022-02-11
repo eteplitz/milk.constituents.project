@@ -61,6 +61,14 @@ df = df %>%
 <br>
 <br>
 
+All statistical analyses, data manipulation, and visualization were completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, and readr.
+
+The dataset was filtered to only include milk samples between 3-10 days in milk. There were 7 Jersey cows included in the original dataset and these have been removed below for this analysis (remaining cows are all Holstein breed). Individual cows were classified as “positive” for metritis if trained farm personnel diagnosed the cow with metritis at 14 DIM or earlier. Cows were classified as “positive” for ketosis if trained farm personnel diagnosed the cow with ketosis at 14 DIM or earlier. Cows were classified as “positive” for displaced abomasum (DA) if trained farm personnel diagnosed the cow with DA at 14 DIM of earlier. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. Cows were defined as “sick” if they were positive for at least one of these health outcomes (metritis, ketosis, or displaced abomasum). If an individual cow were diagnosed with ketosis, metritis, displaced abomasum, or mastitis, milk samples from this individual on all subsequent days were removed from the dataset.
+
+To visualize differences in milk constituent patterns in healthy and sick cows, mean milk constituent values and corresponding standard errors (SE) were calculated for each health category at each day in milk. The mean and standard errors were used to calculate 95% confidence intervals (mean ± 1.96 x SE) displayed as confidence bands in the line plot figures.
+
+<br>
+
 ### Lactose
 
 ```{r, echo = F, message = F}
