@@ -439,57 +439,27 @@ df = df %&gt;%
 <div id="number-of-cows-enrolled" class="section level3">
 <h3>Number of cows enrolled</h3>
 <table>
-<caption>
-Number of cows enrolled in study
-</caption>
+<caption>Number of cows enrolled in study</caption>
 <thead>
-<tr>
-<th style="text-align:center;">
-Parity 1
-</th>
-<th style="text-align:center;">
-Parity 2
-</th>
-<th style="text-align:center;">
-Parity 3
-</th>
-<th style="text-align:center;">
-Parity 4
-</th>
-<th style="text-align:center;">
-Parity 5
-</th>
-<th style="text-align:center;">
-Parity 6
-</th>
-<th style="text-align:center;">
-Parity 7
-</th>
+<tr class="header">
+<th align="center">Parity 1</th>
+<th align="center">Parity 2</th>
+<th align="center">Parity 3</th>
+<th align="center">Parity 4</th>
+<th align="center">Parity 5</th>
+<th align="center">Parity 6</th>
+<th align="center">Parity 7</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-306
-</td>
-<td style="text-align:center;">
-274
-</td>
-<td style="text-align:center;">
-232
-</td>
-<td style="text-align:center;">
-117
-</td>
-<td style="text-align:center;">
-58
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-12
-</td>
+<tr class="odd">
+<td align="center">306</td>
+<td align="center">274</td>
+<td align="center">232</td>
+<td align="center">117</td>
+<td align="center">58</td>
+<td align="center">25</td>
+<td align="center">12</td>
 </tr>
 </tbody>
 </table>
@@ -499,63 +469,29 @@ Parity 7
 <div id="number-of-samples-at-each-timepoint" class="section level3">
 <h3>Number of samples at each timepoint</h3>
 <table>
-<caption>
-Number of samples at each DIM
-</caption>
+<caption>Number of samples at each DIM</caption>
 <thead>
-<tr>
-<th style="text-align:center;">
-3 DIM
-</th>
-<th style="text-align:center;">
-4 DIM
-</th>
-<th style="text-align:center;">
-5 DIM
-</th>
-<th style="text-align:center;">
-6 DIM
-</th>
-<th style="text-align:center;">
-7 DIM
-</th>
-<th style="text-align:center;">
-8 DIM
-</th>
-<th style="text-align:center;">
-9 DIM
-</th>
-<th style="text-align:center;">
-10 DIM
-</th>
+<tr class="header">
+<th align="center">3 DIM</th>
+<th align="center">4 DIM</th>
+<th align="center">5 DIM</th>
+<th align="center">6 DIM</th>
+<th align="center">7 DIM</th>
+<th align="center">8 DIM</th>
+<th align="center">9 DIM</th>
+<th align="center">10 DIM</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-465
-</td>
-<td style="text-align:center;">
-549
-</td>
-<td style="text-align:center;">
-579
-</td>
-<td style="text-align:center;">
-562
-</td>
-<td style="text-align:center;">
-523
-</td>
-<td style="text-align:center;">
-506
-</td>
-<td style="text-align:center;">
-409
-</td>
-<td style="text-align:center;">
-355
-</td>
+<tr class="odd">
+<td align="center">465</td>
+<td align="center">549</td>
+<td align="center">579</td>
+<td align="center">562</td>
+<td align="center">523</td>
+<td align="center">506</td>
+<td align="center">409</td>
+<td align="center">355</td>
 </tr>
 </tbody>
 </table>
@@ -666,63 +602,29 @@ AUC.high[8] = ci.auc(df10$sick, df10$predict.prob, conf.level = 0.95)[3]</code><
 <hr />
 <p><br></p>
 <table>
-<caption>
-Area under ROC curve for PLS model at each DIM
-</caption>
+<caption>Area under ROC curve for PLS model at each DIM</caption>
 <thead>
-<tr>
-<th style="text-align:center;">
-3 DIM
-</th>
-<th style="text-align:center;">
-4 DIM
-</th>
-<th style="text-align:center;">
-5 DIM
-</th>
-<th style="text-align:center;">
-6 DIM
-</th>
-<th style="text-align:center;">
-7 DIM
-</th>
-<th style="text-align:center;">
-8 DIM
-</th>
-<th style="text-align:center;">
-9 DIM
-</th>
-<th style="text-align:center;">
-10 DIM
-</th>
+<tr class="header">
+<th align="center">3 DIM</th>
+<th align="center">4 DIM</th>
+<th align="center">5 DIM</th>
+<th align="center">6 DIM</th>
+<th align="center">7 DIM</th>
+<th align="center">8 DIM</th>
+<th align="center">9 DIM</th>
+<th align="center">10 DIM</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-0.8173998
-</td>
-<td style="text-align:center;">
-0.805677
-</td>
-<td style="text-align:center;">
-0.8195109
-</td>
-<td style="text-align:center;">
-0.8251451
-</td>
-<td style="text-align:center;">
-0.84375
-</td>
-<td style="text-align:center;">
-0.7341346
-</td>
-<td style="text-align:center;">
-0.7379747
-</td>
-<td style="text-align:center;">
-0.7409942
-</td>
+<tr class="odd">
+<td align="center">0.8173998</td>
+<td align="center">0.805677</td>
+<td align="center">0.8195109</td>
+<td align="center">0.8251451</td>
+<td align="center">0.84375</td>
+<td align="center">0.7341346</td>
+<td align="center">0.7379747</td>
+<td align="center">0.7409942</td>
 </tr>
 </tbody>
 </table>
@@ -1275,8 +1177,11 @@ for (i in 1:num.sim) {
   cv.npv[i] = as.numeric(m$byClass[4])
   cv.auc[i] = m$auc
   
-}
-cv.avg.sens[8] = mean(cv.sens)
+}</code></pre>
+<pre><code>## Warning in confusionMatrix.default(as.factor(testing.set$test.result), reference =
+## as.factor(testing.set$sick), : Levels are not in the same order for reference and data. Refactoring data
+## to match.</code></pre>
+<pre class="r"><code>cv.avg.sens[8] = mean(cv.sens)
 cv.sens.low[8] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
 cv.sens.high[8] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
 
@@ -1318,6 +1223,8 @@ cv.auc.high[8] = quantile(cv.auc, probs = 97.5/100, na.rm = T)</code></pre>
 <div id="positive-predictive-value-plot" class="section level5">
 <h5>Positive predictive value plot</h5>
 <hr />
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p><br></p>
 </div>
