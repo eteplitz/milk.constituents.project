@@ -1177,11 +1177,8 @@ for (i in 1:num.sim) {
   cv.npv[i] = as.numeric(m$byClass[4])
   cv.auc[i] = m$auc
   
-}</code></pre>
-<pre><code>## Warning in confusionMatrix.default(as.factor(testing.set$test.result), reference =
-## as.factor(testing.set$sick), : Levels are not in the same order for reference and data. Refactoring data
-## to match.</code></pre>
-<pre class="r"><code>cv.avg.sens[8] = mean(cv.sens)
+}
+cv.avg.sens[8] = mean(cv.sens)
 cv.sens.low[8] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
 cv.sens.high[8] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
 
@@ -1223,8 +1220,6 @@ cv.auc.high[8] = quantile(cv.auc, probs = 97.5/100, na.rm = T)</code></pre>
 <div id="positive-predictive-value-plot" class="section level5">
 <h5>Positive predictive value plot</h5>
 <hr />
-<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
-<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p><br></p>
 </div>
