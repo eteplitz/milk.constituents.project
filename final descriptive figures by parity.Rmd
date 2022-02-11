@@ -1,0 +1,509 @@
+---
+title: "Patterns of milk constituents in early lactation Holstein cows across parity groups"
+author: "Eric Teplitz"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=F, echo=F}
+
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(readr)
+
+df <- read_csv("FINAL dataset.csv")
+
+
+# Here, I filter the dataset to only include the relevant variables (cow ID, potential predictors, health events) and restrict the dataset to the timepoints 3-10 DIM. I also remove 7 jersey cows from the dataset.
+df = df %>% 
+  select(cow_id, dim, milkweightlbs, parity, dim_met, dim_da, dim_ket, dim_cull, dim_mast, lactose, protein, mun, fatb70a30, denovofa, mixedfa, preformedfa, dnrel, mixrel, pfrel, c160,
+         c180, c181c9, acetone, nefaPREDICTED, bhbPREDICTED) %>% 
+  filter(dim<=10 & dim>=3) %>% 
+  filter(cow_id != 30351 & cow_id != 38267 & cow_id != 38469 & cow_id != 38836 & 
+           cow_id != 60614 & cow_id != 60619 & cow_id != 60630)
+
+# This creates binary variables for health outcomes. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. A cow is therefore considered "sick" if it has metritis, ketosis, or DA.
+df$metritis = 0; df$metritis[!is.na(df$dim_met) & df$dim_met <= 14] = 1
+df$DA = 0; df$DA[!is.na(df$dim_da) & df$dim_da <= 14] = 1
+df$ketosis = 0; df$ketosis[!is.na(df$dim_ket) & df$dim_ket <= 14] = 1
+df$cull = 0; df$cull[!is.na(df$dim_cull)] = 1
+df$mastitis = 0; df$mastitis[!is.na(df$dim_mast)] = 1
+df$sick= 0; df$sick[df$metritis + df$DA + df$ketosis != 0] = 1
+df$multiparous = 0; df$multiparous[df$parity>1] = 1
+df$multiparous = as.factor(df$multiparous)
+
+
+### Removes milk collections from dataset after they get sick (from ketosis, DA, metritis, or mastitis). We suspect that the milk composition will be disrupted, and we only are interested in predicting health outcomes from samples taken before they are diagnosed as sick. Mastitis is not a health outcome of concern for this study, but we highly suspect it will significantly impact milk composition.
+df = df %>% 
+  filter( (dim<=dim_ket | is.na(dim_ket)) &
+            (dim<=dim_da | is.na(dim_da)) &
+            (dim<=dim_met | is.na(dim_met)) &
+            (dim<=dim_mast | is.na(dim_mast)) )
+
+
+#
+#
+#
+#
+
+### End of initial data modification
+
+```
+
+<br>
+<br>
+
+### Lactose
+
+```{r, echo = F, message = F}
+
+df$multi = 0; df$multi[df$parity == 2] = 1; df$multi[df$parity >= 3] = 2
+df$multi = as.factor(df$multi)
+levels(df$multi) = c("Parity 1", "Parity 2", "Parity 3+")
+
+# Lactose
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(lactose) / sqrt(n()), lactose = mean(lactose))
+
+ggplot(data = dta, aes(x = dim, y = lactose, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$lactose - 1.96*dta$se, ymax = dta$lactose + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Lactose, %") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Protein
+
+```{r, echo = F, message = F}
+
+# Protein
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(protein) / sqrt(n()), protein = mean(protein))
+
+ggplot(data = dta, aes(x = dim, y = protein, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$protein - 1.96*dta$se, ymax = dta$protein + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Protein, %") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Milk Urea Nitrogen
+
+```{r, echo = F, message = F}
+
+
+# MUN
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(mun) / sqrt(n()), mun = mean(mun))
+
+ggplot(data = dta, aes(x = dim, y = mun, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$mun - 1.96*dta$se, ymax = dta$mun + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Milk urea nitrogen, mg/dL") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Fat
+
+```{r, echo = F, message = F}
+
+# Fat
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(fatb70a30) / sqrt(n()), fatb70a30 = mean(fatb70a30))
+
+ggplot(data = dta, aes(x = dim, y = fatb70a30, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$fatb70a30 - 1.96*dta$se, ymax = dta$fatb70a30 + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Fat, %") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### De novo fatty acids
+
+```{r, echo = F, message = F}
+
+# De Novo FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(denovofa) / sqrt(n()), denovofa = mean(denovofa))
+
+ggplot(data = dta, aes(x = dim, y = denovofa, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$denovofa - 1.96*dta$se, ymax = dta$denovofa + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("De novo fatty acids, g/100g milk") + labs(color=NULL) + ylim(0.7,3.5) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Mixed fatty acids
+
+```{r, echo = F, message = F}
+
+# Mixed FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(mixedfa) / sqrt(n()), mixedfa = mean(mixedfa))
+
+ggplot(data = dta, aes(x = dim, y = mixedfa, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$mixedfa - 1.96*dta$se, ymax = dta$mixedfa + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Mixed fatty acids, g/100g milk") + labs(color=NULL) + ylim(0.7,3.5) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Preformed fatty acids
+
+```{r, echo = F, message = F}
+
+# Preformed FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(preformedfa) / sqrt(n()), preformedfa = mean(preformedfa))
+
+ggplot(data = dta, aes(x = dim, y = preformedfa, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$preformedfa - 1.96*dta$se, ymax = dta$preformedfa + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Preformed fatty acids, g/100g milk") + labs(color=NULL) + ylim(0.7,3.5) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Relative % of de novo fatty acids
+
+```{r, echo = F, message = F}
+
+# Relative % of De Novo FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(dnrel) / sqrt(n()), dnrel = mean(dnrel))
+
+ggplot(data = dta, aes(x = dim, y = dnrel, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$dnrel - 1.96*dta$se, ymax = dta$dnrel + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("De novo fatty acids, relative %") + labs(color=NULL) + ylim(10,60) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Relative % of mixed fatty acids
+
+```{r, echo = F, message = F}
+
+
+# Relative % of Mixed FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(mixrel) / sqrt(n()), mixrel = mean(mixrel))
+
+ggplot(data = dta, aes(x = dim, y = mixrel, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$mixrel - 1.96*dta$se, ymax = dta$mixrel + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Mixed fatty acids, relative %") + labs(color=NULL) + ylim(10,60) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Relative % of preformed fatty acids
+
+```{r, echo = F, message = F}
+
+
+# Relative % of Preformed FA
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(pfrel) / sqrt(n()), pfrel = mean(pfrel))
+
+ggplot(data = dta, aes(x = dim, y = pfrel, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$pfrel - 1.96*dta$se, ymax = dta$pfrel + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Preformed fatty acids, relative %") + labs(color=NULL) + ylim(10,60) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### C16:0
+
+```{r, echo = F, message = F}
+
+# c160
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(c160) / sqrt(n()), c160 = mean(c160))
+
+ggplot(data = dta, aes(x = dim, y = c160, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$c160 - 1.96*dta$se, ymax = dta$c160 + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("C16:0, g/100g milk") + labs(color=NULL) + ylim(0.4,1.8) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### C18:0
+
+```{r, echo = F, message = F}
+
+
+# c180
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(c180) / sqrt(n()), c180 = mean(c180))
+
+ggplot(data = dta, aes(x = dim, y = c180, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$c180 - 1.96*dta$se, ymax = dta$c180 + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("C18:0, g/100g milk") + labs(color=NULL) + ylim(0.4,1.8) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### C18:1 cis-9
+
+```{r, echo = F, message = F}
+
+
+# c181c9
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(c181c9) / sqrt(n()), c181c9 = mean(c181c9))
+
+ggplot(data = dta, aes(x = dim, y = c181c9, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$c181c9 - 1.96*dta$se, ymax = dta$c181c9 + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("C18:1 cis-9, g/100g milk") + labs(color=NULL) + ylim(0.4,1.8) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Acetone
+
+```{r, echo = F, message = F}
+
+# Acetone
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(acetone) / sqrt(n()), acetone = mean(acetone))
+
+ggplot(data = dta, aes(x = dim, y = acetone, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$acetone - 1.96*dta$se, ymax = dta$acetone + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Acetone, mmol/L") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### Predicted blood NEFA
+
+```{r, echo = F, message = F}
+
+# nefaPREDICTED
+df.scaled.nefa = df %>% 
+  mutate(nefaPREDICTED = nefaPREDICTED/1000)
+
+dta = df.scaled.nefa %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(nefaPREDICTED) / sqrt(n()), nefaPREDICTED = mean(nefaPREDICTED))
+
+ggplot(data = dta, aes(x = dim, y = nefaPREDICTED, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$nefaPREDICTED - 1.96*dta$se, ymax = dta$nefaPREDICTED + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Predicted blood NEFA, mmol/L") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+<br>
+<br>
+
+### BHB
+
+```{r, echo = F, message = F}
+
+
+#bhbPREDICTED
+dta = df %>% 
+  group_by(dim, multi) %>% 
+  summarise(se = sd(bhbPREDICTED) / sqrt(n()), bhbPREDICTED = mean(bhbPREDICTED))
+
+ggplot(data = dta, aes(x = dim, y = bhbPREDICTED, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$bhbPREDICTED - 1.96*dta$se, ymax = dta$bhbPREDICTED + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("BHB, mmol/L") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18))
+
+```
+
+---
+
+
+
+
+
