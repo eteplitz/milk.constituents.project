@@ -1,0 +1,17 @@
+name: "Milk Constituents Project"
+navbar:
+  title: "Milk Constituents Project"
+  left:
+    - text: "Methods & Code"
+      href: index.html
+    - text: "Comparing parity groups"
+      href: final-descriptive-figures-by-parity.html
+    - text: "Comparing health outcome groups"
+      href: final-healthy.vs.sick-figures.html
+output_dir: "."
+output:
+  html_document:
+    theme: readable
+    highlight: textmate
+    toc: true 
+    toc_float: true 

@@ -614,7 +614,7 @@ cross.validate = function(input.data, num.groups) {
 
 ```{r, echo = T}
 
-num.sim = 3
+num.sim = 10
 
 ```
 

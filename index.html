@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Eric Teplitz" />
+
+
+<title>Assessing differences in early lactation milk constituents between Holstein cows of varying health outcomes</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Milk Constituents Project</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Methods &amp; Code</a>
+</li>
+<li>
+  <a href="final-descriptive-figures-by-parity.html">Comparing parity groups</a>
+</li>
+<li>
+  <a href="final-healthy.vs.sick-figures.html">Comparing health outcome groups</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Assessing differences in early lactation milk constituents between Holstein cows of varying health outcomes</h1>
+<h4 class="author">Eric Teplitz</h4>
+
+</div>
+
+
+<p><br></p>
+<div id="data-importation" class="section level3">
+<h3>Data importation</h3>
+<hr />
+<p>All statistical analyses, data manipulation, and visualization was completed using the statistical software, R (version 4.1.2). The following R packages were used: tidyr, dplyr, ggplot2, readr, cutpointr, pls, car, caret, plotROC, knitr, epiR, kableExtra, and pROC.</p>
+<p>The dataset was filtered to only include milk samples between 3-10 days in milk. There were 7 Jersey cows included in the original dataset and these have been removed below for this analysis (remaining cows are all Holstein breed). Individual cows were classified as “positive” for metritis if trained farm personnel diagnosed the cow with metritis at 14 DIM or earlier. Cows were classified as “positive” for ketosis if trained farm personnel diagnosed the cow with ketosis at 14 DIM or earlier. Cows were classified as “positive” for displaced abomasum (DA) if trained farm personnel diagnosed the cow with DA at 14 DIM of earlier. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. Cows were defined as “sick” if they were positive for at least one of these health outcomes (metritis, ketosis, or displaced abomasum). If an individual cow were diagnosed with ketosis, metritis, displaced abomasum, or mastitis, milk samples from this individual on all subsequent days were removed from the dataset. Parity 1 cows are defined as primiparous and parity 2+ cows are defined as multiparous.</p>
+<p><br></p>
+<pre class="r"><code># Reading in data and basic formatting
+library(readr)
+library(tidyr)
+library(dplyr)
+library(pls)
+library(car)
+library(caret)
+library(ggplot2)
+library(plotROC)
+library(pROC)
+library(knitr)
+library(epiR)
+
+df &lt;- read_csv(&quot;FINAL dataset.csv&quot;)
+
+
+# Here, I filter the dataset to only include the relevant variables (cow ID, potential predictors, health events) and restrict the dataset to the timepoints 3-10 DIM. I also remove 7 jersey cows from the dataset.
+df = df %&gt;% 
+  select(cow_id, dim, milkweightlbs, parity, dim_met, dim_da, dim_ket, dim_cull, dim_mast, lactose, protein, mun, fatb70a30, denovofa, mixedfa, preformedfa, dnrel, mixrel, pfrel, c160,
+         c180, c181c9, acetone, nefaPREDICTED, bhbPREDICTED) %&gt;% 
+  filter(dim&lt;=10 &amp; dim&gt;=3) %&gt;% 
+  filter(cow_id != 30351 &amp; cow_id != 38267 &amp; cow_id != 38469 &amp; cow_id != 38836 &amp; 
+           cow_id != 60614 &amp; cow_id != 60619 &amp; cow_id != 60630)
+
+# This creates binary variables for health outcomes. We only want to consider illness within the first 14 days because that is when most cows leave the pen of concern. A cow is therefore considered &quot;sick&quot; if it has metritis, ketosis, or DA.
+df$metritis = 0; df$metritis[!is.na(df$dim_met) &amp; df$dim_met &lt;= 14] = 1
+df$DA = 0; df$DA[!is.na(df$dim_da) &amp; df$dim_da &lt;= 14] = 1
+df$ketosis = 0; df$ketosis[!is.na(df$dim_ket) &amp; df$dim_ket &lt;= 14] = 1
+df$cull = 0; df$cull[!is.na(df$dim_cull)] = 1
+df$mastitis = 0; df$mastitis[!is.na(df$dim_mast)] = 1
+df$sick= 0; df$sick[df$metritis + df$DA + df$ketosis != 0] = 1
+df$multiparous = 0; df$multiparous[df$parity&gt;1] = 1
+df$multiparous = as.factor(df$multiparous)
+
+
+### Removes milk collections from dataset after they get sick (from ketosis, DA, metritis, or mastitis). We suspect that the milk composition will be disrupted, and we only are interested in predicting health outcomes from samples taken before they are diagnosed as sick. Mastitis is not a health outcome of concern for this study, but we highly suspect it will significantly impact milk composition.
+df = df %&gt;% 
+  filter( (dim&lt;=dim_ket | is.na(dim_ket)) &amp;
+            (dim&lt;=dim_da | is.na(dim_da)) &amp;
+            (dim&lt;=dim_met | is.na(dim_met)) &amp;
+            (dim&lt;=dim_mast | is.na(dim_mast)) )
+
+
+#
+#
+#
+#
+
+### End of initial data modification</code></pre>
+<hr />
+</div>
+<div id="key-to-variables" class="section level3">
+<h3>Key to variables</h3>
+<ul>
+<li><code>cow_id</code>: cow identification number</li>
+<li><code>dim</code>: days in milk</li>
+<li><code>milkweightlbs</code>: pounds of milk produced by cow during that milk collection</li>
+<li><code>parity</code>: parity for an individual cow (if first calf, parity=1; if second, parity=2)</li>
+<li><code>dim_met</code>: day of metritis diagnosis, value is NA if none</li>
+<li><code>dim_da</code>: day of DA diagnosis, value is NA if none</li>
+<li><code>dim_ket</code>: day of ketosis diagnosis, value is NA if none</li>
+<li><code>dim_cull</code>: day cow was removed from herd, value is NA if none</li>
+<li><code>dim_mast</code>: day of mastitis diagnosis, value is NA if none</li>
+<li><code>lactose</code>: lactose, %</li>
+<li><code>protein</code>: protein, %</li>
+<li><code>mun</code>: milk urea nitrogen, mg/dL</li>
+<li><code>fatb70a30</code>: fat, %</li>
+<li><code>denovofa</code>: de novo fatty acids, g/100g milk</li>
+<li><code>mixedfa</code>: mixed fatty acids, g/100g milk</li>
+<li><code>preformedfa</code>: preformed fatty acids, g/100g milk</li>
+<li><code>dnrel</code>: de novo fatty acids, relative %</li>
+<li><code>mixrel</code>: mixed fatty acids, relative %</li>
+<li><code>pfrel</code>: preformed fatty acids, relative %</li>
+<li><code>c160</code>: C16:0, g/100g milk</li>
+<li><code>c180</code>: C18:0, g/100g milk</li>
+<li><code>c181c9</code>: C18:1 cis-9, g/100g milk</li>
+<li><code>acetone</code>: acetone, mmol/L</li>
+<li><code>nefaPREDICTED</code>: predicted blood NEFA, umol/L</li>
+<li><code>bhbPREDICTED</code>: BHB, mmol/L</li>
+</ul>
+<p><br></p>
+</div>
+<div id="number-of-cows-enrolled" class="section level3">
+<h3>Number of cows enrolled</h3>
+<table>
+<caption>
+Number of cows enrolled in study
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Parity 1
+</th>
+<th style="text-align:right;">
+Parity 2
+</th>
+<th style="text-align:right;">
+Parity 3
+</th>
+<th style="text-align:right;">
+Parity 4
+</th>
+<th style="text-align:right;">
+Parity 5
+</th>
+<th style="text-align:right;">
+Parity 6
+</th>
+<th style="text-align:right;">
+Parity 7
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+306
+</td>
+<td style="text-align:right;">
+274
+</td>
+<td style="text-align:right;">
+232
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+58
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><br></p>
+</div>
+<div id="number-of-samples-at-each-timepoint" class="section level3">
+<h3>Number of samples at each timepoint</h3>
+<table>
+<caption>
+Number of samples at each DIM
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+3 DIM
+</th>
+<th style="text-align:right;">
+4 DIM
+</th>
+<th style="text-align:right;">
+5 DIM
+</th>
+<th style="text-align:right;">
+6 DIM
+</th>
+<th style="text-align:right;">
+7 DIM
+</th>
+<th style="text-align:right;">
+8 DIM
+</th>
+<th style="text-align:right;">
+9 DIM
+</th>
+<th style="text-align:right;">
+10 DIM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+465
+</td>
+<td style="text-align:right;">
+549
+</td>
+<td style="text-align:right;">
+579
+</td>
+<td style="text-align:right;">
+562
+</td>
+<td style="text-align:right;">
+523
+</td>
+<td style="text-align:right;">
+506
+</td>
+<td style="text-align:right;">
+409
+</td>
+<td style="text-align:right;">
+355
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><br> <br></p>
+</div>
+<div id="partial-least-squares-pls-regression" class="section level3">
+<h3>Partial least squares (PLS) regression</h3>
+<hr />
+<div id="stratifying-dataset-by-each-dim" class="section level5">
+<h5>Stratifying dataset by each DIM</h5>
+<p>The dataset was stratified into 8 separate datasets for each day in milk (3-10 DIM).</p>
+<hr />
+<pre class="r"><code>df3 = df %&gt;% filter(dim == 3)
+df4 = df %&gt;% filter(dim == 4)
+df5 = df %&gt;% filter(dim == 5)
+df6 = df %&gt;% filter(dim == 6)
+df7 = df %&gt;% filter(dim == 7)
+df8 = df %&gt;% filter(dim == 8)
+df9 = df %&gt;% filter(dim == 9)
+df10 = df %&gt;% filter(dim == 10)</code></pre>
+<p><br></p>
+</div>
+<div id="running-partial-least-squares-regression-for-each-timepoint" class="section level5">
+<h5>Running partial least squares regression for each timepoint</h5>
+<hr />
+<p>Partial least squares (PLS) regression was used to model health outcomes as a function of the 16 milk constituents and parity (primiparous vs. multiparous). Partial least squares regression is a supervised machine learning method that creates composite variables, known as components, from a number of continuous and binary predictors. These components are constructed to maximize the explained variance of the predictors as well as maximize the correlation between the components and the response variable. Milk constituent predictors included: lactose (%), milk urea nitrogen (mg/dL), protein (%), fat (%), de novo fatty acids (g/100g milk), mixed fatty acids (g/100g milk), preformed fatty acids (g/100g milk), relative % of de novo fatty acids, relative % of mixed fatty acids, relative % of preformed fatty acids, C16:0 (g/100g milk), C18:0 (g/100g milk), C18:1 cis-9 (g/100g milk), acetone (mmol/L), predicted blood NEFA (umol/L), and BHB (mmol/L). Parity was defined as a binary variable with two levels (primiparous and multiparous) and used as a predictor in the PLS model. The variable, <code>sick</code>, was used as the response variable. Cows were defined as <code>sick</code> if they were diagnosed with metritis, ketosis, or displaced abomasum within the first 14 days in milk. A separate PLS regression was completed for each DIM to reduce bias from the variability of milk constituent values by DIM and the unequal number of samplings for each cow. In this stratified modelling approach, each cow appears only once in the dataset and all individual cows are at the same day of lactation for each model.</p>
+<p><br></p>
+<pre class="r"><code>PLS3 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+              c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df3, scale=T, validation = &quot;CV&quot;)
+PLS4 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df4, scale=T, validation = &quot;CV&quot;)
+PLS5 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df5, scale=T, validation = &quot;CV&quot;)
+PLS6 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df6, scale=T, validation = &quot;CV&quot;)
+PLS7 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df7, scale=T, validation = &quot;CV&quot;)
+PLS8 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df8, scale=T, validation = &quot;CV&quot;)
+PLS9 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+             data=df9, scale=T, validation = &quot;CV&quot;)
+PLS10 &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+               c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+              data=df10, scale=T, validation = &quot;CV&quot;)</code></pre>
+<p><br></p>
+</div>
+<div id="calculating-predicted-probabilities-from-the-pls-models" class="section level5">
+<h5>Calculating predicted probabilities from the PLS models</h5>
+<hr />
+<p>We can use the PLS model to predict a numerical value for each datapoint that is a type of representation of predicted probability. The PLS model will construct 17 components from the 17 predictors. Again, these components are composite variables that maximize both the explained variance of the predictors as well as the correlation between the components and response variable. We aimed to use the lowest number of components that sufficiently captured the explained variance in predictors as well as produced a predictive model. Using 2 or 3 components captured a significant majority of explained variance in predictors. However, the model with 2 components was erratic and not as consistent during cross-validation procedures (explained in more detail below), and consequently we decided to construct our model using 3 components.</p>
+<p>Here, I calculate the “predicted probability” using 3 components. Next, we can compare this “predicted probability” with the actual health outcomes observed (represented by the variable <code>sick</code>). Using this predicted probability as a diagnostic test value, we can calculate the area under the ROC curve for each PLS model. Note that there will be 8 separate PLS models.</p>
+<p><br></p>
+<pre class="r"><code>df3$predict.prob = predict(PLS3, ncomp = 3, type = &quot;response&quot;)
+df4$predict.prob = predict(PLS4, ncomp = 3, type = &quot;response&quot;)
+df5$predict.prob = predict(PLS5, ncomp = 3, type = &quot;response&quot;)
+df6$predict.prob = predict(PLS6, ncomp = 3, type = &quot;response&quot;)
+df7$predict.prob = predict(PLS7, ncomp = 3, type = &quot;response&quot;)
+df8$predict.prob = predict(PLS8, ncomp = 3, type = &quot;response&quot;)
+df9$predict.prob = predict(PLS9, ncomp = 3, type = &quot;response&quot;)
+df10$predict.prob = predict(PLS10, ncomp = 3, type = &quot;response&quot;)
+
+AUC = rep(0,8)
+AUC.low = rep(0,8)
+AUC.high = rep(0,8)
+
+AUC[1] = auc(df3$sick, df3$predict.prob)
+AUC[2] = auc(df4$sick, df4$predict.prob)
+AUC[3] = auc(df5$sick, df5$predict.prob)
+AUC[4] = auc(df6$sick, df6$predict.prob)
+AUC[5] = auc(df7$sick, df7$predict.prob)
+AUC[6] = auc(df8$sick, df8$predict.prob)
+AUC[7] = auc(df9$sick, df9$predict.prob)
+AUC[8] = auc(df10$sick, df10$predict.prob)
+
+AUC.low[1] = ci.auc(df3$sick, df3$predict.prob, conf.level = 0.95)[1]
+AUC.low[2] = ci.auc(df4$sick, df4$predict.prob, conf.level = 0.95)[1]
+AUC.low[3] = ci.auc(df5$sick, df5$predict.prob, conf.level = 0.95)[1]
+AUC.low[4] = ci.auc(df6$sick, df6$predict.prob, conf.level = 0.95)[1]
+AUC.low[5] = ci.auc(df7$sick, df7$predict.prob, conf.level = 0.95)[1]
+AUC.low[6] = ci.auc(df8$sick, df8$predict.prob, conf.level = 0.95)[1]
+AUC.low[7] = ci.auc(df9$sick, df9$predict.prob, conf.level = 0.95)[1]
+AUC.low[8] = ci.auc(df10$sick, df10$predict.prob, conf.level = 0.95)[1]
+
+AUC.high[1] = ci.auc(df3$sick, df3$predict.prob, conf.level = 0.95)[3]
+AUC.high[2] = ci.auc(df4$sick, df4$predict.prob, conf.level = 0.95)[3]
+AUC.high[3] = ci.auc(df5$sick, df5$predict.prob, conf.level = 0.95)[3]
+AUC.high[4] = ci.auc(df6$sick, df6$predict.prob, conf.level = 0.95)[3]
+AUC.high[5] = ci.auc(df7$sick, df7$predict.prob, conf.level = 0.95)[3]
+AUC.high[6] = ci.auc(df8$sick, df8$predict.prob, conf.level = 0.95)[3]
+AUC.high[7] = ci.auc(df9$sick, df9$predict.prob, conf.level = 0.95)[3]
+AUC.high[8] = ci.auc(df10$sick, df10$predict.prob, conf.level = 0.95)[3]</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="evaluating-predictive-power-of-pls-model" class="section level3">
+<h3>Evaluating predictive power of PLS model</h3>
+<hr />
+<div id="auc-for-each-pls-model" class="section level5">
+<h5>AUC for each PLS model</h5>
+<hr />
+<p><br></p>
+<table>
+<caption>
+Area under ROC curve for PLS model at each DIM
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+3 DIM
+</th>
+<th style="text-align:right;">
+4 DIM
+</th>
+<th style="text-align:right;">
+5 DIM
+</th>
+<th style="text-align:right;">
+6 DIM
+</th>
+<th style="text-align:right;">
+7 DIM
+</th>
+<th style="text-align:right;">
+8 DIM
+</th>
+<th style="text-align:right;">
+9 DIM
+</th>
+<th style="text-align:right;">
+10 DIM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.8173998
+</td>
+<td style="text-align:right;">
+0.805677
+</td>
+<td style="text-align:right;">
+0.8195109
+</td>
+<td style="text-align:right;">
+0.8251451
+</td>
+<td style="text-align:right;">
+0.84375
+</td>
+<td style="text-align:right;">
+0.7341346
+</td>
+<td style="text-align:right;">
+0.7379747
+</td>
+<td style="text-align:right;">
+0.7409942
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="determining-a-cutpoint" class="section level5">
+<h5>Determining a cutpoint</h5>
+<hr />
+<p>Using this “predicted probability” as a diagnostic test value, we can determine a cutoff used to classify cows as healthy vs. sick. Below, I use a package called <code>cutpointr</code> that will determine a cutpoint for the “predicted probability” that maximizes the sum of the sensitivity and specificity.</p>
+<pre class="r"><code>library(cutpointr)
+
+cp3 = cutpointr(data=df3, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp4 = cutpointr(data=df4, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp5 = cutpointr(data=df5, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp6 = cutpointr(data=df6, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp7 = cutpointr(data=df7, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp8 = cutpointr(data=df8, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp9 = cutpointr(data=df9, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+cp10 = cutpointr(data=df10, x=predict.prob, class=sick, method=maximize_metric, metric=sum_sens_spec)
+
+mergedCP = cp3 %&gt;% bind_rows(cp4,cp5,cp6,cp7,cp8,cp9,cp10)</code></pre>
+<p><br></p>
+</div>
+<div id="classifying-outcomes-using-the-determined-cutoffs" class="section level5">
+<h5>Classifying outcomes using the determined cutoffs</h5>
+<hr />
+<p>Here, I use the PLS-derived “predicted probability” as a diagnostic test. If the “predicted probability” is above the cutpoint, then I classify the cow as <code>sick</code>. If the “predicted probability” is less than or equal to the cutpoint I classify the cow as <code>healthy</code>. The <code>confusionMatrix</code> function then creates a 2x2 table to compare the predicted health status with the true health status.</p>
+<pre class="r"><code>df3$test.result = 0; df3$test.result[df3$predict.prob &gt; cp3$optimal_cutpoint] = 1
+df4$test.result = 0; df4$test.result[df4$predict.prob &gt; cp4$optimal_cutpoint] = 1
+df5$test.result = 0; df5$test.result[df5$predict.prob &gt; cp5$optimal_cutpoint] = 1
+df6$test.result = 0; df6$test.result[df6$predict.prob &gt; cp6$optimal_cutpoint] = 1
+df7$test.result = 0; df7$test.result[df7$predict.prob &gt; cp7$optimal_cutpoint] = 1
+df8$test.result = 0; df8$test.result[df8$predict.prob &gt; cp8$optimal_cutpoint] = 1
+df9$test.result = 0; df9$test.result[df9$predict.prob &gt; cp9$optimal_cutpoint] = 1
+df10$test.result = 0; df10$test.result[df10$predict.prob &gt; cp10$optimal_cutpoint] = 1
+
+matrix3 = confusionMatrix(data=as.factor(df3$test.result), reference=as.factor(df3$sick), positive = &quot;1&quot;)
+matrix4 = confusionMatrix(data=as.factor(df4$test.result), reference=as.factor(df4$sick), positive = &quot;1&quot;)
+matrix5 = confusionMatrix(data=as.factor(df5$test.result), reference=as.factor(df5$sick), positive = &quot;1&quot;)
+matrix6 = confusionMatrix(data=as.factor(df6$test.result), reference=as.factor(df6$sick), positive = &quot;1&quot;)
+matrix7 = confusionMatrix(data=as.factor(df7$test.result), reference=as.factor(df7$sick), positive = &quot;1&quot;)
+matrix8 = confusionMatrix(data=as.factor(df8$test.result), reference=as.factor(df8$sick), positive = &quot;1&quot;)
+matrix9 = confusionMatrix(data=as.factor(df9$test.result), reference=as.factor(df9$sick), positive = &quot;1&quot;)
+matrix10 = confusionMatrix(data=as.factor(df10$test.result), reference=as.factor(df10$sick), positive = &quot;1&quot;)</code></pre>
+<p><br></p>
+</div>
+<div id="calculating-sensitivity-specificity-ppv-and-npv" class="section level5">
+<h5>Calculating sensitivity, specificity, PPV, and NPV</h5>
+<hr />
+<p>Here, I use the <code>epi.tests</code> function within a package called <code>epiR</code> to calculate sensitivity, specificity, positive predictive value, and negative predictive values as well as confidence intervals for these measures.</p>
+<p>Interestingly, the <code>epi.tests</code> function requires a 2x2 matrix as its parameter, but the 2x2 table must be in the reverse orientation as the one returned by the <code>confusionMatrix</code> function. Consequently, first I flip the order of rows/columns to fit requirements of <code>epi.tests</code>. I determine a confidence level of 95% and extract the diagnostic test values from this function. Note that I must do this for sensitivity, specificity, positive predictive value, and negative predictive value for each of the 8 PLS models.</p>
+<pre class="r"><code>se = rep(0,8)
+se.low = rep(0,8)
+se.hi = rep(0,8)
+
+sp = rep(0,8)
+sp.low = rep(0,8)
+sp.hi = rep(0,8)
+
+ppv = rep(0,8)
+ppv.low = rep(0,8)
+ppv.hi = rep(0,8)
+
+npv = rep(0,8)
+npv.low = rep(0,8)
+npv.hi = rep(0,8)
+
+
+# Day 3
+epi.matrix3 = matrix3$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi3 = epi.tests(epi.matrix3, conf.level = 0.95)
+
+se[1] = as.numeric(epi3$detail$se[1])
+se.low[1] = as.numeric(epi3$detail$se[2])
+se.hi[1] = as.numeric(epi3$detail$se[3])
+
+sp[1] = as.numeric(epi3$detail$sp[1])
+sp.low[1] = as.numeric(epi3$detail$sp[2])
+sp.hi[1] = as.numeric(epi3$detail$sp[3])
+
+ppv[1] = as.numeric(epi3$detail$pv.pos[1])
+ppv.low[1] = as.numeric(epi3$detail$pv.pos[2])
+ppv.hi[1] = as.numeric(epi3$detail$pv.pos[3])
+
+npv[1] = as.numeric(epi3$detail$pv.neg[1])
+npv.low[1] = as.numeric(epi3$detail$pv.neg[2])
+npv.hi[1] = as.numeric(epi3$detail$pv.neg[3])
+
+
+
+# Day 4
+epi.matrix4 = matrix4$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi4 = epi.tests(epi.matrix4, conf.level = 0.95)
+
+se[2] = as.numeric(epi4$detail$se[1])
+se.low[2] = as.numeric(epi4$detail$se[2])
+se.hi[2] = as.numeric(epi4$detail$se[3])
+
+sp[2] = as.numeric(epi4$detail$sp[1])
+sp.low[2] = as.numeric(epi4$detail$sp[2])
+sp.hi[2] = as.numeric(epi4$detail$sp[3])
+
+ppv[2] = as.numeric(epi4$detail$pv.pos[1])
+ppv.low[2] = as.numeric(epi4$detail$pv.pos[2])
+ppv.hi[2] = as.numeric(epi4$detail$pv.pos[3])
+
+npv[2] = as.numeric(epi4$detail$pv.neg[1])
+npv.low[2] = as.numeric(epi4$detail$pv.neg[2])
+npv.hi[2] = as.numeric(epi4$detail$pv.neg[3])
+
+
+# Day 5
+epi.matrix5 = matrix5$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi5 = epi.tests(epi.matrix5, conf.level = 0.95)
+
+se[3] = as.numeric(epi5$detail$se[1])
+se.low[3] = as.numeric(epi5$detail$se[2])
+se.hi[3] = as.numeric(epi5$detail$se[3])
+
+sp[3] = as.numeric(epi5$detail$sp[1])
+sp.low[3] = as.numeric(epi5$detail$sp[2])
+sp.hi[3] = as.numeric(epi5$detail$sp[3])
+
+ppv[3] = as.numeric(epi5$detail$pv.pos[1])
+ppv.low[3] = as.numeric(epi5$detail$pv.pos[2])
+ppv.hi[3] = as.numeric(epi5$detail$pv.pos[3])
+
+npv[3] = as.numeric(epi5$detail$pv.neg[1])
+npv.low[3] = as.numeric(epi5$detail$pv.neg[2])
+npv.hi[3] = as.numeric(epi5$detail$pv.neg[3])
+
+
+# Day 6
+epi.matrix6 = matrix6$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi6 = epi.tests(epi.matrix6, conf.level = 0.95)
+
+se[4] = as.numeric(epi6$detail$se[1])
+se.low[4] = as.numeric(epi6$detail$se[2])
+se.hi[4] = as.numeric(epi6$detail$se[3])
+
+sp[4] = as.numeric(epi6$detail$sp[1])
+sp.low[4] = as.numeric(epi6$detail$sp[2])
+sp.hi[4] = as.numeric(epi6$detail$sp[3])
+
+ppv[4] = as.numeric(epi6$detail$pv.pos[1])
+ppv.low[4] = as.numeric(epi6$detail$pv.pos[2])
+ppv.hi[4] = as.numeric(epi6$detail$pv.pos[3])
+
+npv[4] = as.numeric(epi6$detail$pv.neg[1])
+npv.low[4] = as.numeric(epi6$detail$pv.neg[2])
+npv.hi[4] = as.numeric(epi6$detail$pv.neg[3])
+
+
+# Day 7
+epi.matrix7 = matrix7$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi7 = epi.tests(epi.matrix7, conf.level = 0.95)
+
+se[5] = as.numeric(epi7$detail$se[1])
+se.low[5] = as.numeric(epi7$detail$se[2])
+se.hi[5] = as.numeric(epi7$detail$se[3])
+
+sp[5] = as.numeric(epi7$detail$sp[1])
+sp.low[5] = as.numeric(epi7$detail$sp[2])
+sp.hi[5] = as.numeric(epi7$detail$sp[3])
+
+ppv[5] = as.numeric(epi7$detail$pv.pos[1])
+ppv.low[5] = as.numeric(epi7$detail$pv.pos[2])
+ppv.hi[5] = as.numeric(epi7$detail$pv.pos[3])
+
+npv[5] = as.numeric(epi7$detail$pv.neg[1])
+npv.low[5] = as.numeric(epi7$detail$pv.neg[2])
+npv.hi[5] = as.numeric(epi7$detail$pv.neg[3])
+
+
+# Day 8
+epi.matrix8 = matrix8$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi8 = epi.tests(epi.matrix8, conf.level = 0.95)
+
+se[6] = as.numeric(epi8$detail$se[1])
+se.low[6] = as.numeric(epi8$detail$se[2])
+se.hi[6] = as.numeric(epi8$detail$se[3])
+
+sp[6] = as.numeric(epi8$detail$sp[1])
+sp.low[6] = as.numeric(epi8$detail$sp[2])
+sp.hi[6] = as.numeric(epi8$detail$sp[3])
+
+ppv[6] = as.numeric(epi8$detail$pv.pos[1])
+ppv.low[6] = as.numeric(epi8$detail$pv.pos[2])
+ppv.hi[6] = as.numeric(epi8$detail$pv.pos[3])
+
+npv[6] = as.numeric(epi8$detail$pv.neg[1])
+npv.low[6] = as.numeric(epi8$detail$pv.neg[2])
+npv.hi[6] = as.numeric(epi8$detail$pv.neg[3])
+
+
+# Day 9
+epi.matrix9 = matrix9$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi9 = epi.tests(epi.matrix9, conf.level = 0.95)
+
+se[7] = as.numeric(epi9$detail$se[1])
+se.low[7] = as.numeric(epi9$detail$se[2])
+se.hi[7] = as.numeric(epi9$detail$se[3])
+
+sp[7] = as.numeric(epi9$detail$sp[1])
+sp.low[7] = as.numeric(epi9$detail$sp[2])
+sp.hi[7] = as.numeric(epi9$detail$sp[3])
+
+ppv[7] = as.numeric(epi9$detail$pv.pos[1])
+ppv.low[7] = as.numeric(epi9$detail$pv.pos[2])
+ppv.hi[7] = as.numeric(epi9$detail$pv.pos[3])
+
+npv[7] = as.numeric(epi9$detail$pv.neg[1])
+npv.low[7] = as.numeric(epi9$detail$pv.neg[2])
+npv.hi[7] = as.numeric(epi9$detail$pv.neg[3])
+
+
+# Day 10
+epi.matrix10 = matrix10$table[c(2,1),c(2,1)] # flips the order of rows/columns to fit requirements of epi.tests
+epi10 = epi.tests(epi.matrix10, conf.level = 0.95)
+
+se[8] = as.numeric(epi10$detail$se[1])
+se.low[8] = as.numeric(epi10$detail$se[2])
+se.hi[8] = as.numeric(epi10$detail$se[3])
+
+sp[8] = as.numeric(epi10$detail$sp[1])
+sp.low[8] = as.numeric(epi10$detail$sp[2])
+sp.hi[8] = as.numeric(epi10$detail$sp[3])
+
+ppv[8] = as.numeric(epi10$detail$pv.pos[1])
+ppv.low[8] = as.numeric(epi10$detail$pv.pos[2])
+ppv.hi[8] = as.numeric(epi10$detail$pv.pos[3])
+
+npv[8] = as.numeric(epi10$detail$pv.neg[1])
+npv.low[8] = as.numeric(epi10$detail$pv.neg[2])
+npv.hi[8] = as.numeric(epi10$detail$pv.neg[3])</code></pre>
+</div>
+</div>
+<div id="cross-validation-of-the-pls-model" class="section level3">
+<h3>Cross Validation of the PLS model</h3>
+<hr />
+<div id="writing-a-cross-validation-function" class="section level5">
+<h5>Writing a cross validation function</h5>
+<hr />
+<p>This custom function below is used to cross validate the model. The input parameters include a dataset and a desired number of groups into which I split the dataset. For example, if I wanted to cross validate the PLS model at 3 DIM, I could use the parameters <code>input.data = df3</code> and <code>num.groups = 10</code>. The function will split df3 into 10 groups randomly. 9/10 groups will be isolated as the “training set” and the remaining group will be isolated as the “testing set”. Subsequently, I run the PLS regression on the training set. Next, I calculate the “predicted probabilities” of the training set using the PLS algorithm and determine an optimal cutpoint for this “predicted probability” that maximizes the sum of sensitivity and specificity. Again, I use 3 PLS components to calculate the “predicted probability”.</p>
+<p>Next, I use the PLS model algorithm obtained from the training set and use it to calculate the “predicted probability” for each cow in the testing set using 3 components. Using the pre-determined cutoff from the training set, I then classify cows as <code>sick</code> if the corresponding “predicted probability” is above the cutoff. Cows with “predicted probability” less than or equal to the cutoff are classified as healthy.</p>
+<p>Finally, I create a 2x2 table to compare the predicted health status with the true health status. The <code>cross.validate</code> function returns this 2x2 table.</p>
+<p>Additionally, I calculate the area under the ROC curve and add this value to the 2x2 table object called <code>matrix</code>. This will allow me to calculate a cross-validated AUC for each model. Note that I must detach the <code>cutpointr</code> package before calculating AUC. The <code>pROC</code> package (used to calculate AUC) and the <code>cutpointr</code> package use similar language, and consequently detaching the <code>cutpointr</code> package eliminates the ambiguity in using the correct function.</p>
+<pre class="r"><code># Splitting each dataframe into groups randomly
+cross.validate = function(input.data, num.groups) {
+  
+  selections = sample(1:length(input.data$cow_id), size = length(input.data$cow_id)/num.groups, replace = F)
+  
+  input.data$dummy = 0; input.data$dummy[selections] = 1
+  
+  testing.set = subset(input.data, input.data$dummy == 1)
+  training.set = subset(input.data, input.data$dummy == 0)
+  
+  CV.PLS &lt;- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+
+                 c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
+                 data=training.set, scale=T, validation = &quot;CV&quot;)
+  
+  training.set$predict.prob = predict(CV.PLS, ncomp = 3, type = &quot;response&quot;)
+  
+  library(cutpointr)
+  cv.cp = cutpointr(data=training.set, x=predict.prob, class=sick, method = maximize_metric, metric = sum_sens_spec)
+  
+  testing.set$predict.prob = predict(CV.PLS, ncomp=3, newdata=testing.set)
+  
+  testing.set$test.result = 0; testing.set$test.result[testing.set$predict.prob &gt; cv.cp$optimal_cutpoint] = 1
+  
+  matrix = confusionMatrix(as.factor(testing.set$test.result), reference=as.factor(testing.set$sick), positive=&quot;1&quot;)
+  
+  # This line calculates the AUC within this function so that we can subsequently calculate cross validated AUC
+  detach(&quot;package:cutpointr&quot;, unload=TRUE)
+  library(pROC)
+  matrix$auc = pROC::auc(testing.set$sick, testing.set$predict.prob)
+  
+  return(matrix)
+  
+}</code></pre>
+<p><br></p>
+</div>
+<div id="cross-validation-of-each-pls-model" class="section level5">
+<h5>Cross validation of each PLS model</h5>
+<hr />
+<pre class="r"><code>num.sim = 10</code></pre>
+<p>To robustly cross-validate our model, I use the <code>cross.validate</code> function as part of a loop. The code below will repeatedly run the <code>cross.validate</code> function 10 times, and for each repetition it will calculate sensitivity, specificity, positive predictive value, negative predictive value, and the area under the ROC curve. This process is repeated for each PLS model and the number of groups specified in the <code>cross.validate</code> function is set at 2. Consequently, the dataset for each day in milk will be randomly split into two equal groups: a training set and a testing set.</p>
+<p>The cross-validate values for sensitivity, specificity, positive predictive value, negative predictive value, and AUC is calculated as the mean value across 10 repetitions. Bootstrapped 95% confidence intervals are calculated as the 2.5th percentile (lower bound) and 97.5th percentile (upper bound) of the resulting vector of diagnostic values. For example, a vector will be produced with 10 values for sensitivity. The 95% confidence interval will be calculated as the 2.5th percentile and 97.5th percentile of this vector.</p>
+<pre class="r"><code>cv.avg.sens = rep(0,8)
+cv.sens.low = rep(0,8)
+cv.sens.high = rep(0,8)
+
+cv.avg.spec = rep(0,8)
+cv.spec.low = rep(0,8)
+cv.spec.high = rep(0,8)
+
+cv.avg.ppv = rep(0,8)
+cv.ppv.low = rep(0,8)
+cv.ppv.high = rep(0,8)
+
+cv.avg.npv = rep(0,8)
+cv.npv.low = rep(0,8)
+cv.npv.high = rep(0,8)
+
+cv.avg.auc = rep(0,8)
+cv.auc.low = rep(0,8)
+cv.auc.high = rep(0,8)
+
+cv.sens = rep(0,num.sim)
+cv.spec = rep(0,num.sim)
+cv.ppv = rep(0,num.sim)
+cv.npv = rep(0,num.sim)
+cv.auc = rep(0,num.sim)
+
+# DIM 3
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df3, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[1] = mean(cv.sens)
+cv.sens.low[1] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[1] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[1] = mean(cv.spec)
+cv.spec.low[1] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[1] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[1] = mean(cv.ppv)
+cv.ppv.low[1] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[1] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[1] = mean(cv.npv)
+cv.npv.low[1] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[1] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[1] = mean(cv.auc)
+cv.auc.low[1] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[1] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+
+# DIM 4
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df4, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[2] = mean(cv.sens)
+cv.sens.low[2] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[2] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[2] = mean(cv.spec)
+cv.spec.low[2] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[2] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[2] = mean(cv.ppv)
+cv.ppv.low[2] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[2] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[2] = mean(cv.npv)
+cv.npv.low[2] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[2] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[2] = mean(cv.auc)
+cv.auc.low[2] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[2] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+# DIM 5
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df5, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[3] = mean(cv.sens)
+cv.sens.low[3] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[3] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[3] = mean(cv.spec)
+cv.spec.low[3] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[3] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[3] = mean(cv.ppv)
+cv.ppv.low[3] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[3] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[3] = mean(cv.npv)
+cv.npv.low[3] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[3] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[3] = mean(cv.auc)
+cv.auc.low[3] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[3] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+
+# DIM 6
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df6, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[4] = mean(cv.sens)
+cv.sens.low[4] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[4] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[4] = mean(cv.spec)
+cv.spec.low[4] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[4] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[4] = mean(cv.ppv)
+cv.ppv.low[4] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[4] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[4] = mean(cv.npv)
+cv.npv.low[4] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[4] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[4] = mean(cv.auc)
+cv.auc.low[4] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[4] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+# DIM 7
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df7, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[5] = mean(cv.sens)
+cv.sens.low[5] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[5] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[5] = mean(cv.spec)
+cv.spec.low[5] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[5] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[5] = mean(cv.ppv)
+cv.ppv.low[5] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[5] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[5] = mean(cv.npv)
+cv.npv.low[5] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[5] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[5] = mean(cv.auc)
+cv.auc.low[5] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[5] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+# DIM 8
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df8, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[6] = mean(cv.sens)
+cv.sens.low[6] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[6] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[6] = mean(cv.spec)
+cv.spec.low[6] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[6] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[6] = mean(cv.ppv)
+cv.ppv.low[6] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[6] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[6] = mean(cv.npv)
+cv.npv.low[6] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[6] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[6] = mean(cv.auc)
+cv.auc.low[6] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[6] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+
+# DIM 9
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df9, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[7] = mean(cv.sens)
+cv.sens.low[7] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[7] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[7] = mean(cv.spec)
+cv.spec.low[7] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[7] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[7] = mean(cv.ppv)
+cv.ppv.low[7] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[7] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[7] = mean(cv.npv)
+cv.npv.low[7] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[7] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[7] = mean(cv.auc)
+cv.auc.low[7] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[7] = quantile(cv.auc, probs = 97.5/100, na.rm = T)
+
+
+
+# DIM 10
+for (i in 1:num.sim) {
+  
+  m = cross.validate(input.data = df10, num.groups = 2)
+  cv.sens[i] = as.numeric(m$byClass[1])
+  cv.spec[i] = as.numeric(m$byClass[2])
+  cv.ppv[i] = as.numeric(m$byClass[3])
+  cv.npv[i] = as.numeric(m$byClass[4])
+  cv.auc[i] = m$auc
+  
+}
+cv.avg.sens[8] = mean(cv.sens)
+cv.sens.low[8] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
+cv.sens.high[8] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
+
+cv.avg.spec[8] = mean(cv.spec)
+cv.spec.low[8] = quantile(cv.spec, probs = 2.5/100, na.rm = T)
+cv.spec.high[8] = quantile(cv.spec, probs = 97.5/100, na.rm = T)
+
+cv.avg.ppv[8] = mean(cv.ppv)
+cv.ppv.low[8] = quantile(cv.ppv, probs = 2.5/100, na.rm = T)
+cv.ppv.high[8] = quantile(cv.ppv, probs = 97.5/100, na.rm = T)
+
+cv.avg.npv[8] = mean(cv.npv)
+cv.npv.low[8] = quantile(cv.npv, probs = 2.5/100, na.rm = T)
+cv.npv.high[8] = quantile(cv.npv, probs = 97.5/100, na.rm = T)
+
+cv.avg.auc[8] = mean(cv.auc)
+cv.auc.low[8] = quantile(cv.auc, probs = 2.5/100, na.rm = T)
+cv.auc.high[8] = quantile(cv.auc, probs = 97.5/100, na.rm = T)</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="visualizing-diagnostic-measures" class="section level3">
+<h3>Visualizing diagnostic measures</h3>
+<hr />
+<p>We can now visualize the diagnostic test values for both the full model and cross-validated model.</p>
+<p><br></p>
+<div id="sensitivity-plot" class="section level5">
+<h5>Sensitivity plot</h5>
+<hr />
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><br></p>
+</div>
+<div id="specificity-plot" class="section level5">
+<h5>Specificity plot</h5>
+<hr />
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><br></p>
+</div>
+<div id="positive-predictive-value-plot" class="section level5">
+<h5>Positive predictive value plot</h5>
+<hr />
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><br></p>
+</div>
+<div id="negative-predictive-value-plot" class="section level5">
+<h5>Negative predictive value plot</h5>
+<hr />
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><br></p>
+</div>
+<div id="cross-validated-auc-plot" class="section level5">
+<h5>Cross validated AUC plot</h5>
+<hr />
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><br> <br> <br></p>
+</div>
+</div>
+<div id="pls-algorithm" class="section level3">
+<h3>PLS Algorithm</h3>
+<hr />
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 3 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 4 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 5 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 6 DIM
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Constituent
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Lactose
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.45
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.62
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Protein
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.21
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.22
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.22
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Milk Urea Nitrogen
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.52
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.60
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.61
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Fat
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.39
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.42
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.38
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+De novo FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.58
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.45
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.57
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.47
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Mixed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.53
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.55
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.43
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.71
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.63
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.46
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Preformed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % de novo FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.22
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % mixed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.58
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.47
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.40
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % preformed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.37
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.22
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C16:0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.43
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.70
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.62
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.47
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C18:0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.21
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C18:1 cis-9
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.36
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Acetone
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Predicted blood NEFA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+BHB
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.42
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Multiparous
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 7 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 8 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 9 DIM
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+PLS 10 DIM
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Constituent
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Lactose
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.43
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Protein
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Milk Urea Nitrogen
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.22
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.48
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.82
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.02
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.46
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Fat
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.39
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.21
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.46
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.39
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.43
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.53
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+De novo FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.64
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.52
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.49
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.21
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.42
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Mixed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.58
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.40
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.57
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.49
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.49
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Preformed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.39
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % de novo FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.37
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % mixed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.37
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Rel. % preformed FA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.12
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.40
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C16:0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.56
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.42
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.56
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.51
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.54
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.49
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C18:0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.47
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+C18:1 cis-9
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Acetone
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.31
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Predicted blood NEFA
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.19
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.08
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.33
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+BHB
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.28
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.03
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.11
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.29
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.17
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.32
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+Multiparous
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.49
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.30
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.14
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.04
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.63
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+-0.06
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.57
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0.00
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
