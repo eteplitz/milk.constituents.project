@@ -145,6 +145,23 @@ t(table(df$dim)) %>% knitr::kable(col.names = c("3 DIM","4 DIM","5 DIM","6 DIM",
 ---
 
 <br>
+
+### Number of healthy and sick cows
+
+```{r, echo=F}
+
+cow.level.df2 = df %>% group_by(cow_id) %>% 
+  summarise(sick = mean(sick))
+
+t(table(cow.level.df2$sick)) %>% knitr::kable(col.names = c("Healthy","Sick"),
+                           caption = "Number of healthy and sick cows", align = 'cc')
+
+```
+
+
+---
+
+<br>
 <br>
 
 ### Partial least squares (PLS) regression

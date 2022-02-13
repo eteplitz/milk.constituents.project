@@ -496,6 +496,26 @@ df = df %&gt;%
 </tbody>
 </table>
 <hr />
+<p><br></p>
+</div>
+<div id="number-of-healthy-and-sick-cows" class="section level3">
+<h3>Number of healthy and sick cows</h3>
+<table>
+<caption>Number of healthy and sick cows</caption>
+<thead>
+<tr class="header">
+<th align="center">Healthy</th>
+<th align="center">Sick</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">881</td>
+<td align="center">143</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><br> <br></p>
 </div>
 <div id="partial-least-squares-pls-regression" class="section level3">
@@ -1177,8 +1197,13 @@ for (i in 1:num.sim) {
   cv.npv[i] = as.numeric(m$byClass[4])
   cv.auc[i] = m$auc
   
-}
-cv.avg.sens[8] = mean(cv.sens)
+}</code></pre>
+<pre><code>## Warning in confusionMatrix.default(as.factor(testing.set$test.result), reference = as.factor(testing.set$sick), :
+## Levels are not in the same order for reference and data. Refactoring data to match.
+
+## Warning in confusionMatrix.default(as.factor(testing.set$test.result), reference = as.factor(testing.set$sick), :
+## Levels are not in the same order for reference and data. Refactoring data to match.</code></pre>
+<pre class="r"><code>cv.avg.sens[8] = mean(cv.sens)
 cv.sens.low[8] = quantile(cv.sens, probs = 2.5/100, na.rm = T)
 cv.sens.high[8] = quantile(cv.sens, probs = 97.5/100, na.rm = T)
 
@@ -1208,31 +1233,33 @@ cv.auc.high[8] = quantile(cv.auc, probs = 97.5/100, na.rm = T)</code></pre>
 <div id="sensitivity-plot" class="section level5">
 <h5>Sensitivity plot</h5>
 <hr />
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="specificity-plot" class="section level5">
 <h5>Specificity plot</h5>
 <hr />
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="positive-predictive-value-plot" class="section level5">
 <h5>Positive predictive value plot</h5>
 <hr />
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="negative-predictive-value-plot" class="section level5">
 <h5>Negative predictive value plot</h5>
 <hr />
-<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="cross-validated-auc-plot" class="section level5">
 <h5>Cross validated AUC plot</h5>
 <hr />
-<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p><br> <br> <br></p>
 </div>
 </div>
