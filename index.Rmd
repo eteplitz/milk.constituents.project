@@ -118,6 +118,8 @@ df = df %>%
 
 ```{r, echo=F}
 
+library(knitr)
+
 cow.level.df = df %>% group_by(cow_id) %>% 
   summarise(parity = mean(parity))
 
