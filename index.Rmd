@@ -118,8 +118,6 @@ df = df %>%
 
 ```{r, echo=F}
 
-library(knitr)
-
 cow.level.df = df %>% group_by(cow_id) %>% 
   summarise(parity = mean(parity))
 
@@ -635,6 +633,7 @@ cross.validate = function(input.data, num.groups) {
 ```{r, echo = T}
 
 num.sim = 10
+set.seed(1)
 
 ```
 
