@@ -79,7 +79,8 @@ lactose.plot = ggplot(data = dta, aes(x = dim, y = lactose, color = multi, group
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = lactose.plot, filename = "figures-and-final-scripts/figures/lactose.png", width = image.width, height = image.height)
 
@@ -102,7 +103,8 @@ protein.plot = ggplot(data = dta, aes(x = dim, y = protein, color = multi, group
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = protein.plot, filename = "figures-and-final-scripts/figures/protein.png", width = image.width, height = image.height)
 
@@ -125,7 +127,8 @@ mun.plot = ggplot(data = dta, aes(x = dim, y = mun, color = multi, group = multi
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = mun.plot, filename = "figures-and-final-scripts/figures/mun.png", width = image.width, height = image.height)
 
@@ -148,7 +151,8 @@ fat.plot = ggplot(data = dta, aes(x = dim, y = fatb70a30, color = multi, group =
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = fat.plot, filename = "figures-and-final-scripts/figures/fat.png", width = image.width, height = image.height)
 
@@ -172,7 +176,8 @@ denovo.plot = ggplot(data = dta, aes(x = dim, y = denovofa, color = multi, group
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = denovo.plot, filename = "figures-and-final-scripts/figures/denovo.png", width = image.width, height = image.height)
 
@@ -196,7 +201,8 @@ mixed.plot = ggplot(data = dta, aes(x = dim, y = mixedfa, color = multi, group =
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = mixed.plot, filename = "figures-and-final-scripts/figures/mixed.png", width = image.width, height = image.height)
 
@@ -219,7 +225,8 @@ preformed.plot = ggplot(data = dta, aes(x = dim, y = preformedfa, color = multi,
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = preformed.plot, filename = "figures-and-final-scripts/figures/preformed.png", width = image.width, height = image.height)
 
@@ -242,7 +249,8 @@ rel.denovo.plot = ggplot(data = dta, aes(x = dim, y = dnrel, color = multi, grou
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = rel.denovo.plot, filename = "figures-and-final-scripts/figures/rel-denovo.png", width = image.width, height = image.height)
 
@@ -264,7 +272,8 @@ rel.mixed.plot = ggplot(data = dta, aes(x = dim, y = mixrel, color = multi, grou
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = rel.mixed.plot, filename = "figures-and-final-scripts/figures/rel-mixed.png", width = image.width, height = image.height)
 
@@ -287,7 +296,8 @@ rel.preformed.plot = ggplot(data = dta, aes(x = dim, y = pfrel, color = multi, g
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = rel.preformed.plot, filename = "figures-and-final-scripts/figures/rel-preformed.png", width = image.width, height = image.height)
 
@@ -310,7 +320,8 @@ c160.plot = ggplot(data = dta, aes(x = dim, y = c160, color = multi, group = mul
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = c160.plot, filename = "figures-and-final-scripts/figures/c160.png", width = image.width, height = image.height)
 
@@ -333,7 +344,8 @@ c180.plot = ggplot(data = dta, aes(x = dim, y = c180, color = multi, group = mul
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = c180.plot, filename = "figures-and-final-scripts/figures/c180.png", width = image.width, height = image.height)
 
@@ -356,7 +368,8 @@ c181c9.plot = ggplot(data = dta, aes(x = dim, y = c181c9, color = multi, group =
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = c181c9.plot, filename = "figures-and-final-scripts/figures/c181c9.png", width = image.width, height = image.height)
 
@@ -379,7 +392,8 @@ acetone.plot = ggplot(data = dta, aes(x = dim, y = acetone, color = multi, group
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = acetone.plot, filename = "figures-and-final-scripts/figures/acetone.png", width = image.width, height = image.height)
 
@@ -405,7 +419,8 @@ nefa.plot = ggplot(data = dta, aes(x = dim, y = nefaPREDICTED, color = multi, gr
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = nefa.plot, filename = "figures-and-final-scripts/figures/nefa.png", width = image.width, height = image.height)
 
@@ -428,7 +443,8 @@ bhb.plot = ggplot(data = dta, aes(x = dim, y = bhbPREDICTED, color = multi, grou
   scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
   theme_bw() +
   theme(axis.text = element_text(size = 12), 
-        axis.title = element_text(size=18))
+        axis.title = element_text(size=18),
+        legend.position = "none")
 
 ggsave(plot = bhb.plot, filename = "figures-and-final-scripts/figures/bhb.png", width = image.width, height = image.height)
 
