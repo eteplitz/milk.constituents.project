@@ -51,8 +51,23 @@ df = df %>%
 
 
 
+# Descriptive metrics for manuscript --------------------------------------
 
-
+# collapsed.df = df %>% 
+#   group_by(cow_id) %>% 
+#   summarize(metritis = mean(metritis),
+#             ketosis = mean(ketosis),
+#             DA = mean(DA),
+#             cull = mean(cull),
+#             mastitis = mean(mastitis),
+#             sick = mean(sick))
+# 
+# collapsed.df %>% count(metritis)
+# collapsed.df %>% count(ketosis)
+# collapsed.df %>% count(DA)
+# collapsed.df %>% count(cull)
+# collapsed.df %>% count(mastitis)
+# collapsed.df %>% count(sick)
 
 
 
