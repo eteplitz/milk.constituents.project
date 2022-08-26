@@ -53,8 +53,8 @@ df = df %>%
 
 # Descriptive metrics for manuscript --------------------------------------
 
-# collapsed.df = df %>% 
-#   group_by(cow_id) %>% 
+# collapsed.df = df %>%
+#   group_by(cow_id) %>%
 #   summarize(metritis = mean(metritis),
 #             ketosis = mean(ketosis),
 #             DA = mean(DA),
