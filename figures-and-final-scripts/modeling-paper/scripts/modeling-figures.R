@@ -1,4 +1,6 @@
 # Final figure production for modeling paper
+# Author: Eric Teplitz
+
 # source("figures-and-final-scripts/modeling-paper/scripts/modeling-analysis.R")
 
 

@@ -1,4 +1,5 @@
 # Final comparison figure production for modeling paper
+# Author: Eric Teplitz
 
 
 # Formatting settings for figures -----------------------------------------

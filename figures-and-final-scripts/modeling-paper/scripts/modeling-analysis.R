@@ -1,4 +1,5 @@
 # Final analysis script for modeling paper
+# Author: Eric Teplitz
 
 
 # Importing, cleaning, and initial data modification ----------------------
