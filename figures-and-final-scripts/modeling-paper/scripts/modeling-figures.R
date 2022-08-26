@@ -1,5 +1,5 @@
 # Final figure production for modeling paper
-source("figures-and-final-scripts/modeling-paper/scripts/modeling-analysis.R")
+#source("figures-and-final-scripts/modeling-paper/scripts/modeling-analysis.R")
 
 
 
@@ -12,11 +12,11 @@ sens.df = sens.df %>% bind_rows(cv.sens.df)
 sens.df$cv = as.factor(sens.df$cv)
 levels(sens.df$cv) = c("Full model", "Cross-validated model")
 
-ggplot(data = sens.df, aes(x = dim, y = sens, color = cv, group = cv)) +
+sens.plot = ggplot(data = sens.df, aes(x = dim, y = sens, color = cv, group = cv)) +
   geom_point(size = 3) +
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = sens.low, ymax = sens.high), alpha = 0.1) +
-  xlab("Days in milk for each PLS regression") +
+  xlab("Days in milk") +
   ylab("Sensitivity") + ylim(0,1) +
   labs(color=NULL) +
   scale_x_continuous(breaks = 3:10) + 
@@ -25,6 +25,8 @@ ggplot(data = sens.df, aes(x = dim, y = sens, color = cv, group = cv)) +
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size=18),
         legend.position = "top")
+
+ggsave(plot = sens.plot, filename = "figures-and-final-scripts/modeling-paper/figures/sensitivity.png", width = 8, height = 5)
 
 
 
@@ -40,11 +42,11 @@ spec.df = spec.df %>% bind_rows(cv.spec.df)
 spec.df$cv = as.factor(spec.df$cv)
 levels(spec.df$cv) = c("Full model", "Cross-validated model")
 
-ggplot(data = spec.df, aes(x = dim, y = spec, color = cv, group = cv)) +
+spec.plot = ggplot(data = spec.df, aes(x = dim, y = spec, color = cv, group = cv)) +
   geom_point(size = 3) +
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = spec.low, ymax = spec.high), alpha = 0.1) +
-  xlab("Days in milk for each PLS regression") +
+  xlab("Days in milk") +
   ylab("Specificity") + ylim(0,1) +
   labs(color=NULL) +
   scale_x_continuous(breaks = 3:10) + 
@@ -53,6 +55,8 @@ ggplot(data = spec.df, aes(x = dim, y = spec, color = cv, group = cv)) +
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size=18),
         legend.position = "top")
+
+ggsave(plot = spec.plot, filename = "figures-and-final-scripts/modeling-paper/figures/specificity.png", width = 8, height = 5)
 
 
 
@@ -69,11 +73,11 @@ ppv.df = ppv.df %>% bind_rows(cv.ppv.df)
 ppv.df$cv = as.factor(ppv.df$cv)
 levels(ppv.df$cv) = c("Full model", "Cross-validated model")
 
-ggplot(data = ppv.df, aes(x = dim, y = ppv, color = cv, group = cv)) +
+ppv.plot = ggplot(data = ppv.df, aes(x = dim, y = ppv, color = cv, group = cv)) +
   geom_point(size = 3) +
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = ppv.low, ymax = ppv.high), alpha = 0.1) +
-  xlab("Days in milk for each PLS regression") +
+  xlab("Days in milk") +
   ylab("Positive predictive value") + ylim(0,1) +
   labs(color=NULL) +
   scale_x_continuous(breaks = 3:10) + 
@@ -82,6 +86,8 @@ ggplot(data = ppv.df, aes(x = dim, y = ppv, color = cv, group = cv)) +
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size=18),
         legend.position = "top")
+
+ggsave(plot = ppv.plot, filename = "figures-and-final-scripts/modeling-paper/figures/ppv.png", width = 8, height = 5)
 
 
 
@@ -97,11 +103,11 @@ npv.df = npv.df %>% bind_rows(cv.npv.df)
 npv.df$cv = as.factor(npv.df$cv)
 levels(npv.df$cv) = c("Full model", "Cross-validated model")
 
-ggplot(data = npv.df, aes(x = dim, y = npv, color = cv, group = cv)) +
+npv.plot = ggplot(data = npv.df, aes(x = dim, y = npv, color = cv, group = cv)) +
   geom_point(size = 3) +
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = npv.low, ymax = npv.high), alpha = 0.1) +
-  xlab("Days in milk for each PLS regression") +
+  xlab("Days in milk") +
   ylab("Negative predictive value") +
   labs(color=NULL) +
   scale_x_continuous(breaks = 3:10) + 
@@ -111,6 +117,8 @@ ggplot(data = npv.df, aes(x = dim, y = npv, color = cv, group = cv)) +
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size=18),
         legend.position = "top")
+
+ggsave(plot = npv.plot, filename = "figures-and-final-scripts/modeling-paper/figures/npv.png", width = 8, height = 5)
 
 
 
@@ -125,11 +133,11 @@ auc.df = auc.df %>% bind_rows(cv.auc.df)
 auc.df$cv = as.factor(auc.df$cv)
 levels(auc.df$cv) = c("Full model", "Cross-validated model")
 
-ggplot(data = auc.df, aes(x = dim, y = AUC, color = cv, group = cv)) +
+auc.plot = ggplot(data = auc.df, aes(x = dim, y = AUC, color = cv, group = cv)) +
   geom_point(size = 3) +
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = AUC.low, ymax = AUC.high), alpha = 0.1) +
-  xlab("Days in milk for each PLS regression") +
+  xlab("Days in milk") +
   ylab("Area under ROC curve") + ylim(0,1) +
   labs(color=NULL) +
   scale_x_continuous(breaks = 3:10) + 
@@ -138,6 +146,8 @@ ggplot(data = auc.df, aes(x = dim, y = AUC, color = cv, group = cv)) +
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size=18),
         legend.position = "top")
+
+ggsave(plot = auc.plot, filename = "figures-and-final-scripts/modeling-paper/figures/auc.png", width = 8, height = 5)
 
 
 

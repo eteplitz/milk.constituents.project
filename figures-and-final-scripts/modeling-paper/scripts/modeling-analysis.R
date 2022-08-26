@@ -7,12 +7,8 @@ library(readr)
 library(tidyr)
 library(dplyr)
 library(pls)
-library(car)
-library(caret)
 library(ggplot2)
-library(plotROC)
 library(pROC)
-library(knitr)
 library(epiR)
 
 df <- read_csv("FINAL dataset.csv")
@@ -86,21 +82,21 @@ df10 = df %>% filter(dim == 10)
 
 # Running partial least squares regression for each timepoint
 PLS3 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df3, scale=T, validation = "CV")
+             data=df3, scale=T)
 PLS4 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df4, scale=T, validation = "CV")
+             data=df4, scale=T)
 PLS5 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df5, scale=T, validation = "CV")
+             data=df5, scale=T)
 PLS6 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df6, scale=T, validation = "CV")
+             data=df6, scale=T)
 PLS7 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df7, scale=T, validation = "CV")
+             data=df7, scale=T)
 PLS8 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df8, scale=T, validation = "CV")
+             data=df8, scale=T)
 PLS9 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-             data=df9, scale=T, validation = "CV")
+             data=df9, scale=T)
 PLS10 <- plsr(sick ~ lactose+protein+mun+fatb70a30+denovofa+mixedfa+preformedfa+dnrel+mixrel+pfrel+c160+c180+c181c9+acetone+nefaPREDICTED+bhbPREDICTED+multiparous, 
-              data=df10, scale=T, validation = "CV")
+              data=df10, scale=T)
 
 
 
@@ -472,7 +468,7 @@ cross.validate = function(input.data, num.groups) {
 # Cross validation of each PLS model --------------------------------------
 
 # SET NUMBER OF BOOTSTRAP REPETITIONS HERE
-num.sim = 10
+num.sim = 100
 set.seed(1)
 
 
