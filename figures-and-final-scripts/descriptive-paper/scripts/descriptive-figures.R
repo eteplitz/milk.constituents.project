@@ -63,6 +63,47 @@ levels(df$multi) = c("Parity 1", "Parity 2", "Parity 3+")
 
 
 
+
+# Descriptive Stats -------------------------------------------------------
+
+num_samples = df %>% 
+  group_by(cow_id) %>% 
+  summarize(num_sam = n())
+
+mean(num_samples$num_sam)
+min(num_samples$num_sam)
+max(num_samples$num_sam)
+table(num_samples$num_sam)
+
+
+
+
+# Milk yield --------------------------------------------------------------
+
+dta = df %>% 
+  group_by(dim, multi) %>%
+  mutate(milkweightkg = milkweightlbs/2.205) %>% 
+  summarise(se = sd(milkweightkg) / sqrt(n()), milkweightkg = mean(milkweightkg))
+
+milk.plot = ggplot(data = dta, aes(x = dim, y = milkweightkg, color = multi, group = multi)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_ribbon(aes(ymin = dta$milkweightkg - 1.96*dta$se, ymax = dta$milkweightkg + 1.96*dta$se), alpha = 0.1) +
+  xlab("Days in milk") + ylab("Milk yield, kg") + labs(color=NULL) +
+  scale_x_continuous(breaks = 3:10) +
+  scale_color_manual(values=c("mediumpurple", "darkorange", "deepskyblue1")) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size=18),
+        legend.position = "none")
+
+ggsave(plot = milk.plot, filename = "figures-and-final-scripts/descriptive-paper/figures/milk.png", width = image.width, height = image.height)
+
+
+
+
+
+
 # Lactose -----------------------------------------------------------------
 
 # Lactose
